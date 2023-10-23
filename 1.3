@@ -1,0 +1,18 @@
+//CORRETTO
+//IN BOX
+public boolean equals(Object o){
+    if(o == null) return false;
+    if(o.getClass() != getClass()) return false;
+        Box b = (Box) o;
+    return ((b.x == x) && (b.y == y));
+
+}
+
+//IN COLORED BOX
+public boolean equals(Object o){
+    if(o == null) return false;
+    if(super.equals(o) == false) return false;
+    ColoredBox c = (ColoredBox) o;
+    return (color.equals(c.color));
+
+}

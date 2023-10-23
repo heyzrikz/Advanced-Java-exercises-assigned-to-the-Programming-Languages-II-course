@@ -1,0 +1,18 @@
+public class A {
+    Comparator<Double> b = new B(null);
+    Comparator<String> c = (x, y) -> B.g(x, y);
+    <T> A f(T x, T y) {
+    return new B(x==y);
+    }
+    }
+
+    class B implements Comparator<T>{
+        Comparator<T> cmp = null;
+        B(Boolean o){
+            
+        }
+
+        
+
+    }
+    

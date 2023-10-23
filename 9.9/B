@@ -1,0 +1,35 @@
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+
+public class B{
+
+    public static final Comparator<Object> something = new Comparator<Object>() {
+
+        @Override
+        public int compare(Object o1, Object o2) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+        
+    };
+
+    public static LinkedList<String> l = new LinkedList<>();
+
+    public static List<String>getList(){
+        return l;
+    }
+
+    public static <T> T getIt(T x){
+        return x;
+    }
+
+    public static HashSet convert(Set<? super Integer> s){
+        return null;
+
+    }
+
+
+}

@@ -1,0 +1,6 @@
+a)funzionale ma non completo poichè accetta solo Collection<Object>
+b)non è funzionale poichè non possiamo leggere gli elementi di Collection<? super K>
+c)funzionale ma non completo poichè accetta solo Collection<Object>
+d)funzionale, completa, corretta, non offre ulteriori garanzie, metodo poco semplice 2 param
+e)funzionale, completa, corretta, offre garanzie che la collection non venga modificata, è semplice, il tipo di ritorno da informazioni in più
+f)non è funzionale poichè non siamo in grado di poter leggere gli elementi della collection

@@ -1,0 +1,33 @@
+import java.util.LinkedList;
+
+public class Accumulator <T extends Number>{
+    public LinkedList<T> p = new LinkedList<>();
+    public LinkedList<T> n = new LinkedList<>();
+    public void add(T number){
+        if(number.doubleValue()>=0){
+            p.add(number);
+        }else n.add(number);
+    }
+
+    public LinkedList<? extends T> positives(){
+        return p;
+    }
+
+    public LinkedList<? extends T> negatives(){
+        return n;
+    }
+
+    public double sum(){
+        double sum = 0;
+        for(Number o : p){
+            sum = sum + o.doubleValue();
+        }
+        for(Number o : n){
+            sum = sum + o.doubleValue();
+        }
+        return sum;
+
+    }
+
+
+}

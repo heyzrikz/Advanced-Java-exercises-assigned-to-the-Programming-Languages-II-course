@@ -1,0 +1,15 @@
+/*
+ a) non completa
+ b) Completa, funzionale, corretta, non offre ulteriori garanzie, semplice, specificità tipo di ritorno massima
+ c)completa, funzionale, corretta, offre garanzie sulla lista, semplice, tipo di ritorno specifico
+ d) completa, funzionale, corretta, offre garanzie massime, semplicità massima, tipo di ritorno poco specifico, se un utente imposta
+    come parametro una lista di interi si aspetta un intero come risultato e non Object
+ e)non completa
+ f)non corretta poichè non è sempre possibile assegnare un valori della lista al tipo di ritorno 
+ */
+public class Exact{
+public static <T> T extractPos(List<? extends T> l, int n){
+    if(l.size() >= n ) throw new RuntimeException();
+    return l.get(n);
+}
+}

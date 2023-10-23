@@ -1,0 +1,27 @@
+public class BinaryTreePreIterator implements Iterator{
+    public class BinaryTreeNode {
+        private Object value;
+        private BinaryTreeNode left, right;
+        public BinaryTreeNode getLeft() { return left; }
+        public BinaryTreeNode getRight() { return right; }
+        BinaryTreeNode(Object val){
+            value = val;
+        }
+        BinaryTreeNode(){
+            value = null;
+        }
+        public String toString(){
+            return ""+value;
+        }
+        // aggiungere costruttore, metodo toString, etc.
+       }
+
+       LinkedList<BinaryTreeNode> l = new LinkedList<>();
+       private int i = 0;
+       public boolean hasNext(){
+           if((i+1) <= l.size()) return true;
+           else return false;
+       }
+
+    
+}

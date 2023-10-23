@@ -1,0 +1,13 @@
+public class Over{
+    public static <K,V> Map<K,V> overridingMap(Map<? extends K,V> map1 , Map<? extends K, V> map2){
+        Map<K,V> map = new HashMap<>();
+        for(K k: map1.keySet()){
+            if(map2.keySet().contains(k)) map.put(k,map2.get(k));
+            else map.put(k,map1.get(k));
+        }
+        return map;
+    }
+    public static void main(String[] args) {
+        
+    }
+}

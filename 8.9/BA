@@ -1,0 +1,18 @@
+public class B<H>{
+    public int compareTo(String v){
+        return 1;
+    }
+
+    public <E extends Number> E f(Object o){
+        return null;
+    }
+
+    public <F> F g1(){
+        return null;
+    }
+
+    public <E> B g2(E x){
+        return null;
+    }
+
+}

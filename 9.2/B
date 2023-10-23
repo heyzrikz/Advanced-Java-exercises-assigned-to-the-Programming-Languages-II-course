@@ -1,0 +1,28 @@
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+public class B<Object> implements Iterable{
+    private static String msg;
+    public B(){
+
+    }
+    public B(Object o){
+
+    }
+    public static String buildMessage(A a){
+        return msg;
+    }
+
+    public boolean check(Set<?> s1, Integer n){
+        return true;
+    }
+    public HashSet process(Set<?> s1,Set<?> s2, Integer n){
+        return null;
+    }
+    @Override
+    public Iterator iterator() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+}

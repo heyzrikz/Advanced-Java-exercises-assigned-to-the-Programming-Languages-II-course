@@ -1,0 +1,17 @@
+public class GameLevel{
+    private class Coordinate{
+        Coordinate(double l , double a){
+            if(l < 0 || a < 0) throw new IllegalArgumentException();
+            larghezza = l;
+            altezza = a;} 
+    }
+   
+
+    private Coordinate dimensioni_livello;
+    GameLevel(double l , double a){
+        dimensioni_livello = new Coordinate(l,a);
+    } 
+
+    
+
+}

@@ -1,0 +1,17 @@
+public class B<T extends Comparable<T>> implements Comparable{
+    B(Object n){}
+    B(){}
+    
+    public static B f(int i){
+        return new B<Integer>();
+    }
+public int compareTo(Object v){
+    return 1;
+}
+
+public Integer getIt(){
+    return null;
+}
+
+
+}

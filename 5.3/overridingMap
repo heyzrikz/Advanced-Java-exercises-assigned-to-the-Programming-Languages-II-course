@@ -1,0 +1,9 @@
+a)Funzionale, non è completa perchè le due mappe accettano solo gli stessi tipi
+b)Non è funzionale poichè non possiamo fare put sulla mappa di ritorno
+c)Non è completa poichè la seconda mappa accetta solo elementi che estendono la prima
+d)Non è funzionale poichè non posso leggere la seconda mappa
+e)Non è funzionale poichè non posso leggere le due mappe e non posso fare put sulla mapa da restituire
+f)Non è funzionale, le mappe accettano solo valori di tipo object
+
+mia soluzione:
+<K,V> Map<? super K,? super V> overridingMap(Map<? extends K,? extends V> map1 , Map<? extends K, ? extends V> map2);

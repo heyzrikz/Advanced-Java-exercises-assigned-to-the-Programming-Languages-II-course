@@ -1,0 +1,22 @@
+/*
+a)non funzionale
+b)funzionale, completa, corretta, offre garanzie sia su list che su comparator, semplicità: 1 parametro
+c)funzionale, completa, corretta, non offre garanzie, semolicità: 1 parametro
+d)non completa, accetta solo list di Object
+e)non correta nel caso in cui gli elementi di List non sono comparabili per Comparator<T>   
+f)funzionale, non completa, poichè accetta solo List di tipo S che estendono direttamente T di Comparator
+
+
+ */
+
+
+public class Sorted{
+    public static <T> boolean isSorted(List<? extends T> x , Comparator<? super T> c){
+        T prec = x.get(0);
+        for(T t: x){
+            if(c.compare(t,prec) < 0) return false;
+            prec = t;
+        }
+        return true;
+    }
+}

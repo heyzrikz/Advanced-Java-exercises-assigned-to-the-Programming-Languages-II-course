@@ -1,0 +1,54 @@
+public class Controller{
+
+    Map<Function,ArrayList<Function>> elenco = new HashMap<Function,ArrayList<Function>>();
+
+    public class Function{
+        private String nome;
+        private boolean on;
+    
+        Function(String n){
+            nome = n;
+            on = true;
+        }
+
+        public boolean equals(Object o){
+            if(!(o.getClass() == getClass())) return false;
+            Function f = (Function) o;
+            return nome.equals(f.nome) && on == f.on;
+        }
+
+        public String toString(){
+            return nome;
+        }
+
+        public void turnOn(){
+            on = true;
+        }
+
+        public void turnOff(){
+            on = false;
+        }
+
+        public void setIncompatible(Function f){
+
+        }
+    }
+
+
+    public Function addFunction(String n){
+        if(elenco.get(new Function(n)) == null){
+            elenco.put(new Function(n),new ArrayList<Function>());
+        }
+        return new Function(n);
+    }
+
+    public void printOn(){
+        for(Function key: elenco.keySet()){
+            if(key.on) System.out.println(key);
+        }
+    }
+
+
+
+
+}

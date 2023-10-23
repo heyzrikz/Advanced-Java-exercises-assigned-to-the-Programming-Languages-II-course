@@ -1,0 +1,34 @@
+public class Range <T extends Comparable<T>>{
+    private T min;
+    private T max;
+    Range(T o1, T o2){
+        if(o1.compareTo(o2) < 0){
+            min = o1;
+            max = o2;
+        }else{
+            min = o2;
+            max = o1;
+        }
+    }
+
+    public boolean isInside(T x){
+        if(x.compareTo(min) == -1 || x.compareTo(max) == 1) return false;
+        else return true;
+    }
+
+    public boolean isOverlapping(Range <T> x){
+        if(x.max.compareTo(min) < 0 || 
+           x.min.compareTo(max) > 0
+        ) return false;
+        else return true;
+    }
+
+    public boolean equals(Object o){
+        if(getClass() != o.getClass()) return false;
+        Range<T> x = (Range<T>) o;
+            return (min.equals(x.min) && max.equals(x.max));
+
+    }
+
+    
+}

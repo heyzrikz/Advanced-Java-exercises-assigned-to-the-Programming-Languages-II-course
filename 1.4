@@ -1,0 +1,40 @@
+public class Fraction {
+	protected float numeratore , denominatore, res;
+	Fraction(float n,float d){
+	    numeratore = n;
+	    denominatore = d;
+	    res = numeratore/denominatore;
+	}
+
+	public boolean equals(Object o){
+	    if(!(o instanceof Fraction)) return false;
+	    Fraction f = (Fraction) o;
+	    return ((numeratore/denominatore) == (f.numeratore/f.denominatore));
+	}
+
+	public Fraction times(Object o){
+	    Fraction f = (Fraction) o;
+	    return new Fraction(numeratore/denominatore,f.denominatore/f.numeratore);
+
+	}
+
+}
+
+
+public class ReducedFraction extends Fraction{
+	ReducedFraction(float n, float d) {
+		super(n, d);
+	}
+
+	public boolean equals(Object o){
+	    return super.equals(o);
+
+	}
+
+	public Fraction times(Object o){
+	    if(o.getClass() != getClass()) return (super.times(o));
+	    ReducedFraction r = (ReducedFraction) o;
+	    return new ReducedFraction(numeratore/denominatore,r.denominatore/r.numeratore);
+
+	}
+}

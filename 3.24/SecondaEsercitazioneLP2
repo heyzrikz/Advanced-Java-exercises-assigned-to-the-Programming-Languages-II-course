@@ -1,0 +1,78 @@
+//CLASSE IMPIANTO
+public class Impianto{
+
+    private int max_power;
+    HashSet<Apparecchio> set = new HashSet<>();
+
+    //Costruttori
+    Impianto(){
+        max_power = 0;
+        }
+
+    Impianto(int p){
+        max_power = p;
+        }
+    
+    //metodi
+    public void collega(Apparecchio a){
+        set.add(a);
+        a.setImpianto(this);
+        }
+
+    public int potenza(){
+        int potenza = 0;
+        for(Apparecchio a:set){
+            if(a.isOn()) potenza = potenza + a.getPower();
+            }
+        return potenza;
+        }
+
+    public int getMaxPower(){
+        return max_power;
+        }
+    }
+
+
+//CLASSE APPARECCHIO
+public class Apparecchio{
+
+    private int power;
+    private boolean acceso;
+    private Impianto myImpianto;
+
+    //costruttori
+    Apparecchio(){
+        power = 0;
+        }
+
+    Apparecchio(int p){
+        power = p;
+        }
+
+    //metodi
+    public boolean isOn(){
+        return acceso;
+        }
+
+    public int getPower(){
+        return power;
+        }
+
+    public void setImpianto(Impianto i){
+        myImpianto = i;
+
+        }
+
+    public void on(){
+        acceso = true;
+        if(myImpianto.potenza() > myImpianto.getMaxPower()) throw new RuntimeException("Attenzione superata la potenza massima dell'impianto");
+        }
+
+    public void off(){
+        acceso = false;
+        }
+
+    
+
+
+}

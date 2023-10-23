@@ -1,0 +1,28 @@
+public class B<T extends Comparable<T>> {
+    private T val;
+    private A a;
+ 
+    B(Object a_l){
+        if(a_l instanceof A){
+            A l = (A) a_l;
+            a = l;
+        }else{
+            T v = (T) a_l;
+            val = v;
+        }
+        
+    }
+
+    B(){
+
+    }
+    public T getIt(){
+        return val;
+    }
+
+    public static B<?> f(int i){
+        val = (T) Integer.valueOf(i);
+        return this;
+    }
+
+}

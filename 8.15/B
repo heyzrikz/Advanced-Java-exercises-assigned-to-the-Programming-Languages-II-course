@@ -1,0 +1,27 @@
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Set;
+
+public class B {
+    
+    public static Comparator<Object> something = null;
+
+    public static HashSet<String> h = new HashSet<>();
+
+    public static LinkedList<String> l = new LinkedList<>();
+
+    public static LinkedList<String> getList(){
+        return l;
+    }
+
+    public static<U> U getIt(U x){
+        return x;
+    }
+
+    public static HashSet<String> convert(Set<?> s){
+        return h;
+    }
+
+
+}

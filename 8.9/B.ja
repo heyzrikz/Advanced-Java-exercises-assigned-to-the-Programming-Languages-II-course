@@ -1,0 +1,24 @@
+public class B <T>{
+    private String var;
+    private T v;
+    public T g1(){
+        return v;
+    }
+
+    public B<String> g2(T x){
+        return new B<String>();
+    }
+
+    public int compareTo(String value){
+        return var.compareTo(value);
+    }
+
+    public Number f(Object o){
+        if (!(o instanceof Number)) return null;
+        else {
+            Number n = (Number) o;
+            return n;
+
+        }
+    }
+}

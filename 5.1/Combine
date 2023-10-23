@@ -1,0 +1,76 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a)funzionale ma non completo poichè non permette la combinazione di Comparator di classi nella stessa gerearchia
+b)non è funzionale poichè se restituisce il secondo comparatore deve per forza essere di tipo T
+c)funzionale, completo, corretto, non offre ulteriori garanzie, metodo poco semplice
+d)non è funzionale poichè comparatore deve per forza essere di tipo T, e i due comparatori possono essere anche superiodi a T
+e)funzionale ma non completo poichè accetta solo Comparator di Object
+f)non è funzionale //da vedere tipo di assegnazione da <? super T> a <? extends T> e viceversa
+possibile mia soluzione: <T> Comparator<? super T> combine(Comparator<? extends T>, Comparator<? extends T>);
+è funzionale, completa, corretta, offre ulteriori garanzie, è semplice e ci sono informazioni sul tipo di ritorno
+
+<T,V>Set<V> commonKeys(Map<? extends T,V> m1,Map<? extends T, V> m2)
+
+a)non funzionale poichè Comparator accetta qualsiasi tipo parametrico
+b)non completo, il comparator accetta solo il comparatore della superclasse di T
+c)non funzionale poichè Comparator non accetta S
+d)funzionale, non completa, corretta, offre ulteriori garanzie, è semplice 
+e)non completa, accetta solo Comparator di T
+f)non funzionale, non è possibile leggere il Set
+
+<T> T findPrevious(Collection<? extends T> l, Comparator<? super T> c, T x){
+    T max = null;
+    for(T i: l ){
+        if(c.compare(i,x) > 0 && (max == null || c.compare(i,max) > 0)) max = i;
+    }
+    return max;
+}
+
+<K,V> Map<? super K,? super V> makeMap(List<? extends K> keys , List<? extends V> val){
+    Map<? super K , ? super V> map = new HashMap<>();
+    int i = 0;
+    for(K k :keys){
+        map.put(k,val.get(i));
+        i++;
+    }
+    return map;
+}
+
+<T> T gLB(Set<? extends T> a, Set<? extends T> b, Comparator<? super T> c){
+    ArrayList<? extends T> a = new ArrayList<>(a);
+    ArrayList<? extends T> b = new ArrayList<>(b);
+    Collections.sort(a,c);
+    Collections.sort(b,c);
+    T ret = a.get(a.size() - 1);
+    T ret_b = b.get(b.size() - 1);
+    i = 2;
+    while(a.size() - i >= 0 && c.compare(ret,ret_b) > 0){
+        ret = a.get(a.size() - i);
+        i++;
+    }
+    T r = null;
+    if(ret < ret_b) r = ret;
+    return r; 
+
+     
+}

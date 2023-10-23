@@ -1,0 +1,21 @@
+public class Cartella{
+    private class Pair{
+        private int riga;
+        private int colonna;
+
+        Pair(int r , int c){
+            if(r > 2 || c > 4) throw new IllegalArgumentException();
+            riga = r;
+            colonna = c;
+        }
+    }
+
+    private Map<Pair,Integer> tabella;
+     Cartella(){
+        for(int i = 0;i<5;i++){
+            for(int j = 0; j<3;j++){
+                
+            }
+        }
+     }
+}

@@ -1,0 +1,14 @@
+public class Delay{
+    public static <T> Iterator<T> delayIterator(Iterator<T> i , int n){
+        return new Iterator<T>(){
+            public boolean hasNext(){
+                return i.hasNext();
+            }
+
+            public T next(){
+                Thread.sleep(n*1000);
+                return i.next();
+            }
+        }
+    }
+}

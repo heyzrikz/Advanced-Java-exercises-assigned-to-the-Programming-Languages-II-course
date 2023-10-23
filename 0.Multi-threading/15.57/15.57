@@ -1,0 +1,15 @@
+class ThreadWithProgress(RunnableWithProgress r){
+    public void run(){
+        Thread = th new Thread(r);
+        th.start();
+        int percentuale = 0;
+        while(th.isAlive()){
+            Thread.sleep(1000);
+            if(percentuale != r.getProgress()){
+                percentuale = r.getProgress();
+                System.out.println(percentuale);
+            }
+
+        }
+    }
+}

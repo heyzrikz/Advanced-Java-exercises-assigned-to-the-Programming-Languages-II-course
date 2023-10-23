@@ -1,0 +1,53 @@
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Set;
+
+
+
+public class Relation<S,T>{
+    class Rel{
+        public S s;
+        public T t;
+
+    }
+
+    LinkedList<Rel> list = new LinkedList<>();
+    public void put(S primo, T secondo){
+        Rel r = new Rel();
+        r.s = primo;
+        r.t = secondo;
+        list.add(r);
+    } 
+    
+    public void remove(S primo, T secondo){
+        Iterator<Rel> iter = list.iterator();
+        while(iter.hasNext()){
+            Rel r = iter.next();
+            if(r.s.equals(primo) && r.t.equals(secondo)){
+                iter.remove();
+            }
+        }
+    }
+
+    public Set<T> image(S elem){
+        HashSet<T> l = new HashSet<>();
+            for (Rel r: list){
+                if(r.s.equals(elem)){
+                    l.add(r.t);
+                }
+            }
+            return l;
+    } 
+    public Set<S> preImage(T elem){
+        HashSet<S> l = new HashSet<>();
+            for(Rel r: list){
+                if(r.t.equals(elem)){
+                    l.add(r.s);
+                }
+            }
+            return l;
+    } 
+
+
+}

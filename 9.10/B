@@ -1,0 +1,23 @@
+public class B extends Exception{
+    B(){
+
+    }
+
+    B(Object n){
+
+    }
+
+    public class C extends B{
+
+    }
+
+    public class D extends B{
+        
+    }
+
+    public int g(){
+        return 1;
+    }
+
+
+}
